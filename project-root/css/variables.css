@@ -1,0 +1,56 @@
+/* Шрифты */
+@font-face {
+    font-family: "Caviar Dreams";
+    src: url(../fonts/CaviarDreams.ttf);
+}
+@font-face {
+    font-family: "Caviar Dreams";
+    src: url(../fonts/Caviar_Dreams_Bold.ttf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Caviar Dreams";
+    src: url(../fonts/CaviarDreams_Italic.ttf);
+    font-style: italic;
+}
+@font-face {
+    font-family: "Caviar Dreams";
+    src: url(../fonts/CaviarDreams_BoldItalic.ttf);
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Японские шрифты для атмосферы */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Yuji+Syuku&display=swap');
+
+/* CSS переменные */
+:root {
+    --primary-color: #bc002d; /* Японский красный */
+    --secondary-color: #2c5530; /* Зеленый бамбука */
+    --accent-color: #f8b500; /* Золотой */
+    --text-color: #2c2c2c;
+    --bg-color: #fefefe;
+    --border-color: #d4af37;
+    --shadow-color: rgba(188, 0, 45, 0.1);
+    --success-color: #4CAF50;
+    --error-color: #f44336;
+    --warning-color: #ff9800;
+    
+    /* Размеры */
+    --header-height: 70px;
+    --container-width: 1200px;
+    --border-radius: 15px;
+    --border-radius-small: 8px;
+    
+    /* Тени */
+    --shadow-small: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 5px 15px var(--shadow-color);
+    --shadow-large: 0 10px 30px rgba(0, 0, 0, 0.3);
+    
+    /* Отступы */
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 40px;
+    --spacing-xl: 60px;
+}

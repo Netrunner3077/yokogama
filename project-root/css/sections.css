@@ -1,0 +1,30 @@
+/* Основной контент */
+.main-content {
+    max-width: 1000px;
+    margin: var(--spacing-lg) auto;
+    text-align: left;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    background: white;
+    box-shadow: var(--shadow-medium);
+}
+
+/* Секции */
+section {
+    margin: var(--spacing-lg) 0;
+}
+
+/* Информационные блоки */
+.booking-info, .delivery-info, .price-info, .special-offer, .contact-info {
+    background: linear-gradient(135deg, #fff8f8, #f0f8f0);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-small);
+    border-left: 4px solid var(--primary-color);
+    margin: var(--spacing-md) 0;
+}
+
+.special-offer {
+    background: linear-gradient(135deg, #fff8f8, #fff8e8);
+    border-left: 4px solid var(--accent-color);
+}

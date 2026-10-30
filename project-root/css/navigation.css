@@ -1,0 +1,282 @@
+/* Основная навигация */
+nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--secondary-color), #1e3a23);
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+nav.scrolled {
+    padding: var(--spacing-xs) 0;
+    background: linear-gradient(135deg, rgba(44, 85, 48, 0.95), rgba(30, 58, 35, 0.95));
+}
+
+/* Бренд навигации */
+.nav-brand {
+    order: 1;
+    font-family: 'Yuji Syuku', serif;
+    font-size: 24pt;
+    font-weight: bold;
+    color: white !important;
+    text-decoration: none;
+    padding: 10pt 16pt;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    margin-right: auto;
+}
+
+.nav-brand:hover {
+    color: var(--accent-color) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Полная навигация для десктопов */
+.nav-full {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.nav-full a {
+    display: block;
+    font-size: 16pt;
+    padding: 12pt 16pt;
+    background: transparent !important;
+    color: white !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-full a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-full a:hover::before {
+    width: 80%;
+}
+
+.nav-full a:hover {
+    color: var(--accent-color) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Выпадающее меню для мобильных */
+.nav-dropdown {
+    order: 3;
+    display: none;
+    position: relative;
+    margin-left: auto;
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24pt;
+    cursor: pointer;
+    padding: 10pt 16pt;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.nav-toggle:hover {
+    color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-close {
+    display: none;
+}
+
+.nav-toggle.active .nav-icon {
+    display: none;
+}
+
+.nav-toggle.active .nav-close {
+    display: inline;
+}
+
+.nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: linear-gradient(135deg, var(--secondary-color), #1e3a23);
+    min-width: 250px;
+    box-shadow: var(--shadow-large);
+    border-radius: 0 0 10px 10px;
+    border-top: 2px solid var(--accent-color);
+    z-index: 1001;
+}
+
+.nav-menu.active {
+    display: block;
+    animation: slideDown 0.3s ease-in-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nav-link {
+    display: block;
+    padding: 15px 20px;
+    color: white !important;
+    text-decoration: none;
+    font-size: 16pt;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.nav-link:last-child {
+    border-bottom: none;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--accent-color) !important;
+    padding-left: 25px;
+}
+
+/* Оверлей для затемнения фона */
+.nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.nav-overlay.active {
+    display: block;
+}
+
+/* Хлебные крошки */
+.breadcrumbs {
+    background: linear-gradient(135deg, var(--secondary-color), #1e3a23);
+    padding: var(--spacing-md) 0;
+    margin-bottom: var(--spacing-lg);
+    border-bottom: 3px solid var(--border-color);
+}
+
+.breadcrumbs nav {
+    position: static;
+    background: transparent;
+    justify-content: flex-start;
+    padding: 0 var(--spacing-md);
+}
+
+.breadcrumbs nav a {
+    color: white !important;
+    background: transparent !important;
+    font-size: 14pt !important;
+    position: relative;
+    padding-right: 25px !important;
+}
+
+.breadcrumbs nav a:not(:last-child)::after {
+    content: '›';
+    position: absolute;
+    right: 8px;
+    color: var(--accent-color);
+}
+
+.breadcrumbs nav div {
+    color: var(--accent-color) !important;
+    background: transparent !important;
+    font-weight: bold;
+}
+
+/* Адаптивность для навигации */
+@media (max-width: 950px) {
+    .nav-full {
+        display: none;
+        margin-left: auto;
+    }
+    
+    .nav-dropdown {
+        order: 2;
+        display: block;
+    }
+    
+    .nav-toggle {
+        display: block;
+    }
+    
+    .nav-brand {
+        font-size: 20pt;
+        padding: 12pt 16pt;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-brand {
+        font-size: 18pt;
+    }
+    
+    .nav-menu {
+        min-width: 200px;
+        right: -10px;
+    }
+    
+    .nav-link {
+        font-size: 14pt;
+        padding: 12px 15px;
+    }
+}
+
+/* Стили для скроллинга навигации */
+nav.scrolled .nav-brand,
+nav.scrolled .nav-full a,
+nav.scrolled .nav-toggle {
+    padding: 8pt 12pt;
+    font-size: 14pt;
+}
+
+nav.scrolled .nav-brand {
+    font-size: 18pt;
+}
+
+/* Анимация иконки гамбургера */
+.nav-toggle {
+    transition: all 0.3s ease;
+}
+
+.nav-toggle.active {
+    transform: rotate(90deg);
+    background: rgba(255, 255, 255, 0.2);
+}

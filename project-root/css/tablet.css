@@ -1,0 +1,67 @@
+/* Планшеты (481px - 768px) */
+@media (max-width: 768px) {
+    body {
+        padding-top: 120px;
+    }
+    
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav div, nav a {
+        font-size: 14pt;
+        padding: 10pt;
+        width: 100%;
+        text-align: center;
+    }
+    
+    header h1:last-of-type {
+        font-size: 36pt;
+        letter-spacing: 4pt;
+    }
+    
+    header address {
+        font-size: 14pt;
+    }
+    
+    .main-content {
+        padding: var(--spacing-md);
+        margin: var(--spacing-md) auto;
+    }
+    
+    table.catalog {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    form {
+        padding: var(--spacing-sm);
+    }
+    
+    input, select, textarea {
+        font-size: 16px; /* Убираем zoom на iOS */
+    }
+    
+    table.pricelist {
+        font-size: 14px;
+    }
+    
+    .price-info, .special-offer {
+        padding: var(--spacing-sm);
+    }
+    
+    .booking-button {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 16pt;
+    }
+}

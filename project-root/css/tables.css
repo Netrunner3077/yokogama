@@ -1,0 +1,79 @@
+/* Таблицы каталога */
+table.catalog {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: auto;
+    margin: var(--spacing-md) 0;
+    box-shadow: var(--shadow-medium);
+    border-radius: var(--border-radius-small);
+    overflow: hidden;
+}
+
+table.catalog td {
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    padding: var(--spacing-md);
+    vertical-align: top;
+}
+
+table.catalog img {
+    width: 100%;
+    border-radius: var(--border-radius-small);
+    transition: transform 0.3s ease;
+}
+
+table.catalog img:hover {
+    transform: scale(1.05);
+}
+
+table.catalog h3 {
+    font-family: "Caviar Dreams";
+    font-size: 20pt;
+    font-variant: small-caps;
+    text-transform: capitalize;
+    letter-spacing: 2pt;
+    color: var(--primary-color);
+}
+
+table.catalog h3::after {
+    content: ":"; 
+    color: var(--secondary-color);
+}
+
+/* Прайс-лист */
+table.pricelist {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--spacing-md) 0;
+    box-shadow: var(--shadow-medium);
+    border-radius: var(--border-radius-small);
+    overflow: hidden;
+}
+
+table.pricelist th, table.pricelist td {
+    border: 1px solid #e0e0e0;
+    padding: var(--spacing-md);
+    text-align: left;
+}
+
+table.pricelist thead th {
+    color: white;
+    background: linear-gradient(135deg, var(--secondary-color), #1e3a23);
+    font-family: 'Yuji Syuku', serif;
+    font-size: 16pt;
+}
+
+table.pricelist tbody th {
+    background: linear-gradient(135deg, var(--primary-color), #d40032);
+    color: white;
+    font-family: 'Yuji Syuku', serif;
+}
+
+/* Стили для цен */
+.price {
+    font-weight: bold;
+    text-align: right;
+    color: var(--primary-color);
+    font-size: 18pt;
+    margin-top: var(--spacing-sm);
+}

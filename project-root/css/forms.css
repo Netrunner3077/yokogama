@@ -1,0 +1,104 @@
+/* Формы */
+form {
+    width: 100%;
+    max-width: 600px;
+    padding: var(--spacing-lg);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: linear-gradient(135deg, #f8f8f8, #fff);
+    box-shadow: var(--shadow-medium);
+    margin: var(--spacing-md) 0;
+}
+
+form p {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: bold;
+    color: var(--secondary-color);
+    font-size: 14pt;
+}
+
+input, select, textarea {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14pt;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 2px solid #ddd;
+    border-radius: var(--border-radius-small);
+    width: 100%;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--primary-color);
+    background-color: #fff8f8;
+    box-shadow: 0 0 0 3px rgba(188, 0, 45, 0.1);
+    outline: none;
+}
+
+input[type="submit"], input[type="image"] {
+    font: bold 16pt 'Yuji Syuku', Verdana;
+    text-transform: uppercase;
+    width: auto;
+    min-width: 200px;
+    border: 2px solid var(--primary-color);
+    border-radius: 25px;
+    background: linear-gradient(135deg, var(--primary-color), #d40032);
+    color: white;
+    padding: var(--spacing-md) var(--spacing-lg);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: var(--spacing-sm) auto;
+    display: block;
+}
+
+input[type="submit"]:hover, input[type="image"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(188, 0, 45, 0.3);
+}
+
+input[type="radio"], input[type="checkbox"] {
+    width: auto;
+    margin-right: var(--spacing-sm);
+    transform: scale(1.2);
+}
+
+fieldset {
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-small);
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    background: #f8f8f8;
+}
+
+legend {
+    font-family: 'Yuji Syuku', serif;
+    font-size: 16pt;
+    color: var(--primary-color);
+    padding: 0 var(--spacing-md);
+}
+
+/* Выпадающие списки */
+select {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23bc002d" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right var(--spacing-sm) center;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+/* Группировка в select */
+optgroup {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+optgroup option {
+    font-weight: normal;
+    color: var(--text-color);
+    padding-left: var(--spacing-md);
+}
