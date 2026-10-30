@@ -39,7 +39,7 @@
 }
 
 .booking-button::after {
-    content: url('img src="../img/icons/torii-gate.svg" class="nav-icon" alt="Логотип"');
+    content: url("/img/icons/torii-gate.svg");
     position: absolute;
     right: var(--spacing-md);
     top: 50%;

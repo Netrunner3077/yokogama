@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Йокогама: суши-бар</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
     <meta name="description" content="Суши-бар Йокогама. Сашими, суши, роллы, напитки">
     <meta name="keywords" content="суши-бар, Йогагама, сашими, суши, ролл">
     <meta name="author" content="Читатель">
@@ -16,18 +16,18 @@
     <!-- Фиксированная навигация -->
     <nav id="mainNav">
         <!-- Бренд/логотип -->
-        <a href="#hd" class="nav-brand"><img src="../img/icons/torii-gate.svg" class="nav-icon"
+        <a href="#hd" class="nav-brand"><img src="/img/icons/torii-gate.svg" class="nav-icon"
                 alt="Логотип">Йокогама</a>
 
         <!-- Полная навигация для десктопов -->
         <div class="nav-full">
-            <a href="#hd">Главная</a>
-            <a href="sashimi.html">Сашими</a>
-            <a href="sushi.html">Суши</a>
-            <a href="rolls.html">Роллы</a>
-            <a href="pricelist.html">Прайс-лист</a>
-            <a href="order.html">Заказ столика</a>
-            <a href="takeaway.html">Еда на вынос</a>
+            <a href="/#hd">Главная</a>
+            <a href="/sashimi">Сашими</a>
+            <a href="/sushi">Суши</a>
+            <a href="/rolls">Роллы</a>
+            <a href="/pricelist">Прайс-лист</a>
+            <a href="/order">Заказ столика</a>
+            <a href="/takeaway">Еда на вынос</a>
         </div>
 
         <!-- Выпадающее меню для мобильных -->
@@ -37,13 +37,13 @@
                 <span class="nav-close">&#65794;</span>
             </button>
             <div class="nav-menu" id="navMenu">
-                <a href="#" class="nav-link">Главная</a>
-                <a href="sashimi.html" class="nav-link">Сашими</a>
-                <a href="sushi.html" class="nav-link">Суши</a>
-                <a href="rolls.html" class="nav-link">Роллы</a>
-                <a href="pricelist.html" class="nav-link">Прайс-лист</a>
-                <a href="order.html" class="nav-link">Заказ столика</a>
-                <a href="takeaway.html" class="nav-link">Еда на вынос</a>
+                <a href="/#" class="nav-link">Главная</a>
+                <a href="/sashimi" class="nav-link">Сашими</a>
+                <a href="/sushi" class="nav-link">Суши</a>
+                <a href="/rolls" class="nav-link">Роллы</a>
+                <a href="/pricelist" class="nav-link">Прайс-лист</a>
+                <a href="/order" class="nav-link">Заказ столика</a>
+                <a href="/takeaway" class="nav-link">Еда на вынос</a>
             </div>
         </div>
     </nav>
@@ -53,7 +53,7 @@
 
     <header id="hd">
         <section class="container">
-            <div class="pos1"><img src="../img/sushi.jpg" alt="Суши-бар Йокогама"></div>
+            <div class="pos1"><img src="/img/sushi.jpg" alt="Суши-бар Йокогама"></div>
             <div class="pos2">
                 <h1>Йокогама</h1>
             </div>
@@ -76,7 +76,7 @@
                 <li>Роллы - традиционные и современные</li>
                 <li>Соусы - домашнего приготовления</li>
                 <li><strong>Горячие блюда</strong> - темпура, террики и др.</li>
-                <li>Безалкогольные напитки <img src="../img/drink.jpg" alt="Напитки"
+                <li>Безалкогольные напитки <img src="/img/drink.jpg" alt="Напитки"
                         style="height: 20px; vertical-align: middle;">:
                     <ul>
                         <li>Японский чай</li>
@@ -86,7 +86,7 @@
                 </li>
             </ul>
 
-            <h3><img src="../img/icons/japan-flag.svg" class="icon" alt="Акция"> Участвуйте в нашей рекламной акции!</h3>
+            <h3><img src="/img/icons/japan-flag.svg" class="icon" alt="Акция"> Участвуйте в нашей рекламной акции!</h3>
             <ol>
                 <li>Посетите наш суши-бар между 16:00 и 19:00.</li>
             </ol>
@@ -107,7 +107,7 @@
                 <div class="sakura-petal"></div>
                 <div class="sakura-petal"></div>
                 <div class="sakura-petal"></div>
-                <a href="order.html" class="booking-button">
+                <a href="/order" class="booking-button">
                     席を予約する
                 </a>
             </div>
@@ -118,10 +118,10 @@
     <footer id="ft">
         <div class="footer-content">
             <div class="footer-section">
-                <h3><img src="../img/icons/torii-gate.svg" class="icon" alt="Логотип"> Контакты</h3>
+                <h3><img src="/img/icons/torii-gate.svg" class="icon" alt="Логотип"> Контакты</h3>
                 <div class="footer-contact">
                     <div class="contact-item">
-                        <div class="contact-icon"><img src="../img/icons/map-pin.svg" class="icon" alt="Адрес"></div>
+                        <div class="contact-icon"><img src="/img/icons/map-pin.svg" class="icon" alt="Адрес"></div>
                         <div>
                             <strong>Адрес</strong><br>
                             ул. Зелёной Рощи, 17<br>
@@ -129,14 +129,14 @@
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon"><img src="../img/icons/phone.svg" class="icon" alt="Телефон"></div>
+                        <div class="contact-icon"><img src="/img/icons/phone.svg" class="icon" alt="Телефон"></div>
                         <div>
                             <strong>Телефон</strong><br>
                             +7 (495) 123-45-67
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon"><img src="../img/icons/envelope.svg" class="icon" alt="Email"></div>
+                        <div class="contact-icon"><img src="/img/icons/envelope.svg" class="icon" alt="Email"></div>
                         <div>
                             <strong>Email</strong><br>
                             info@yokogama.ru
@@ -146,7 +146,7 @@
             </div>
 
             <div class="footer-section">
-                <h3><img src="../img/icons/clock.svg" class="icon" alt="Время"> Часы работы</h3>
+                <h3><img src="/img/icons/clock.svg" class="icon" alt="Время"> Часы работы</h3>
                 <div class="business-hours">
                     <div class="hours-row">
                         <span>Понедельник - Четверг</span>
@@ -162,27 +162,27 @@
                     </div>
                 </div>
 
-                <h3 style="margin-top: 30px;"><img src="../img/icons/japanese-dolls.svg" class="icon" alt="Соцсети"> Мы в
+                <h3 style="margin-top: 30px;"><img src="/img/icons/japanese-dolls.svg" class="icon" alt="Соцсети"> Мы в
                     соцсетях</h3>
                 <div class="social-links">
-                    <a href="#" class="social-link" title="Instagram"><img src="../img/icons/instagram.svg"
+                    <a href="#" class="social-link" title="Instagram"><img src="/img/icons/instagram.svg"
                             class="social-icon" alt="Instagram"></a>
-                    <a href="#" class="social-link" title="Facebook"><img src="../img/icons/facebook.svg"
+                    <a href="#" class="social-link" title="Facebook"><img src="/img/icons/facebook.svg"
                             class="social-icon" alt="Facebook"></a>
-                    <a href="#" class="social-link" title="Telegram"><img src="../img/icons/telegram.svg"
+                    <a href="#" class="social-link" title="Telegram"><img src="/img/icons/telegram.svg"
                             class="social-icon" alt="Telegram"></a>
-                    <a href="#" class="social-link" title="VK"><img src="../img/icons/vk.svg" class="social-icon"
+                    <a href="#" class="social-link" title="VK"><img src="/img/icons/vk.svg" class="social-icon"
                             alt="VKontakte"></a>
                 </div>
             </div>
 
             <div class="footer-section">
-                <h3><img src="../img/icons/sushi.svg" class="icon" alt="Суши"> О нас</h3>
+                <h3><img src="/img/icons/sushi.svg" class="icon" alt="Суши"> О нас</h3>
                 <p>Суши-бар "Йокогама" - это место, где традиции встречаются с инновациями. Наши шеф-повара из Японии
                     готовят блюда по аутентичным рецептам.</p>
 
                 <div class="booking-masterpiece" style="margin: 30px 0;">
-                    <a href="order.html" class="booking-button" style="font-size: 16pt;">
+                    <a href="/order" class="booking-button" style="font-size: 16pt;">
                         Забронировать стол
                     </a>
                 </div>
@@ -203,7 +203,7 @@
         <i class="fas fa-comments"></i>
     </button>
 
-    <script src="../js/main.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 
 </html>

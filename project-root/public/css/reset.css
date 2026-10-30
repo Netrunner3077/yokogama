@@ -55,7 +55,7 @@ ul li, ol li {
 }
 
 ul li::before {
-    content: url('../img/icons/sakura.svg');
+    content: url('/img/icons/sakura.svg');
     position: absolute;
     left: -25px;
     color: var(--primary-color);
