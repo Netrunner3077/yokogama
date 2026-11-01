@@ -17,12 +17,12 @@
         <!-- Фиксированная навигация -->
         <nav id="mainNav">
             <!-- Бренд/логотип -->
-            <a href="index" class="nav-brand"><img src="/img/icons/torii-gate.svg" class="nav-icon"
+            <a href="/#hd" class="nav-brand"><img src="/img/icons/torii-gate.svg" class="nav-icon"
                     alt="Логотип">Йокогама</a>
 
             <!-- Полная навигация для десктопов -->
             <div class="nav-full">
-                <a href="index">Главная</a>
+                <a href="/#hd">Главная</a>
                 <a href="/sashimi">Сашими</a>
                 <a href="/sushi">Суши</a>
                 <a href="/rolls">Роллы</a>
@@ -38,7 +38,7 @@
                     <span class="nav-close">&#65794;</span>
                 </button>
                 <div class="nav-menu" id="navMenu">
-                    <a href="index" class="nav-link">Главная</a>
+                    <a href="/#hd" class="nav-link">Главная</a>
                     <a href="/sashimi" class="nav-link">Сашими</a>
                     <a href="/sushi" class="nav-link">Суши</a>
                     <a href="/rolls" class="nav-link">Роллы</a>
@@ -65,7 +65,7 @@
 
     <div class="breadcrumbs">
         <nav>
-            <a href="index">Главная</a>
+            <a href="/#hd">Главная</a>
             <div>Прайс-лист</div>
         </nav>
     </div>

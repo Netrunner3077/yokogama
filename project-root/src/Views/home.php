@@ -37,7 +37,7 @@
                 <span class="nav-close">&#65794;</span>
             </button>
             <div class="nav-menu" id="navMenu">
-                <a href="/#" class="nav-link">Главная</a>
+                <a href="/#hd" class="nav-link">Главная</a>
                 <a href="/sashimi" class="nav-link">Сашими</a>
                 <a href="/sushi" class="nav-link">Суши</a>
                 <a href="/rolls" class="nav-link">Роллы</a>
