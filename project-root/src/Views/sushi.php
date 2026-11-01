@@ -75,30 +75,16 @@
         <div class="japanese-title">寿司</div>
 
         <table class="catalog">
-            <tr>
-                <td><img src="/img/sushi_chukka.jpg" alt="Чукка"></td>
-                <td>
-                    <h3>Чукка</h3>
-                    <p>Диетические суши, приготовляемые из одноименного салата, риса, кунжута и водорослей нори.</p>
-                    <p class="price">40&#8381;</p>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="/img/sushi_maguro.jpg" alt="Магуро"></td>
-                <td>
-                    <h3>Магуро</h3>
-                    <p>Классические суши из тунца и риса. Идеальное сочетание нежности и вкуса.</p>
-                    <p class="price">80&#8381;</p>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="/img/sushi_tobiko.jpg" alt="Тобико"></td>
-                <td>
-                    <h3>Тобико</h3>
-                    <p>Икра летучей рыбы, рис, нори. Хрустящая текстура и насыщенный вкус.</p>
-                    <p class="price">80&#8381;</p>
-                </td>
-            </tr>
+            <?php foreach ($products as $product): ?>
+                <tr>
+                    <td><img src="<?= htmlspecialchars($product['image_path']) ?>" alt="<?= htmlspecialchars($product['name']) ?>"></td>
+                    <td>
+                        <h3><?= htmlspecialchars($product['name']) ?></h3>
+                        <p><?= htmlspecialchars($product['description']) ?></p>
+                        <p class="price"><?= (int)$product['price'] ?>&#8381;</p>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
         </table>
     </main>
 

@@ -4,6 +4,7 @@
 namespace App\Controllers;
 
 use App\Core\Controller;
+use App\Models\Product;
 
 class PageController extends Controller
 {
@@ -14,17 +15,23 @@ class PageController extends Controller
 
     public function sashimi(): void
     {
-        $this->render('sashimi', ['title' => 'Сашими']);
+        $productModel = new Product();
+        $products = $productModel->getByCategorySlug('sashimi');
+        $this->render('sashimi', ['title' => 'Сашими', 'products' => $products]);
     }
 
     public function sushi(): void
     {
-        $this->render('sushi', ['title' => 'Суши']);
+        $productModel = new Product();
+        $products = $productModel->getByCategorySlug('sushi');
+        $this->render('sushi', ['title' => 'Суши', 'products' => $products]);
     }
 
     public function rolls(): void
     {
-        $this->render('rolls', ['title' => 'Роллы']);
+        $productModel = new Product();
+        $products = $productModel->getByCategorySlug('rolls');
+        $this->render('rolls', ['title' => 'Роллы', 'products' => $products]);
     }
 
     public function pricelist(): void

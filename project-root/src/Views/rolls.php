@@ -75,31 +75,16 @@
         <div class="japanese-title">巻物</div>
 
         <table class="catalog">
-            <tr>
-                <td><img src="/img/roll_kunsei_batakon.jpg" alt="Кунсэй батакон"></td>
-                <td>
-                    <h3>Кунсэй батакон</h3>
-                    <p>Копченый лосось, бекон, огурец и мягкий сыр. Дымный аромат в сочетании с нежной текстурой.</p>
-                    <p class="price">360&#8381;</p>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="/img/roll_arigato.jpg" alt="Аригато"></td>
-                <td>
-                    <h3>Аригато</h3>
-                    <p>Готовится из креветки, рукколы, авокадо, огурца и трех фирменных соусов! Богатый вкусовой букет.
-                    </p>
-                    <p class="price">360&#8381;</p>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="/img/roll_mexican.jpg" alt="Мексиканский"></td>
-                <td>
-                    <h3>Мексиканский</h3>
-                    <p>Креветка темпура, огурец и тобико. Острый ролл для любителей пикантных сочетаний.</p>
-                    <p class="price">360&#8381;</p>
-                </td>
-            </tr>
+            <?php foreach ($products as $product): ?>
+                <tr>
+                    <td><img src="<?= htmlspecialchars($product['image_path']) ?>" alt="<?= htmlspecialchars($product['name']) ?>"></td>
+                    <td>
+                        <h3><?= htmlspecialchars($product['name']) ?></h3>
+                        <p><?= htmlspecialchars($product['description']) ?></p>
+                        <p class="price"><?= (int)$product['price'] ?>&#8381;</p>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
         </table>
     </main>
 

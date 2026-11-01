@@ -75,24 +75,16 @@
         <div class="japanese-title">刺身</div>
 
         <table class="catalog">
-            <tr>
-                <td><img src="/img/sashimi_unagi.jpg" alt="Унаги"></td>
-                <td>
-                    <h3>Унаги</h3>
-                    <p>Копченый угорь, свежий салат, кунжут и одноименный соус. Изысканное сочетание текстур и вкусов.
-                    </p>
-                    <p class="price">340&#8381;</p>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="/img/sashimi_hamachi.jpg" alt="Хамачи"></td>
-                <td>
-                    <h3>Хамачи</h3>
-                    <p>Готовится из желтохвоста, лакедры, зеленого лука, риса и дайкона. Нежное мясо с насыщенным
-                        вкусом.</p>
-                    <p class="price">400&#8381;</p>
-                </td>
-            </tr>
+            <?php foreach ($products as $product): ?>
+                <tr>
+                    <td><img src="<?= htmlspecialchars($product['image_path']) ?>" alt="<?= htmlspecialchars($product['name']) ?>"></td>
+                    <td>
+                        <h3><?= htmlspecialchars($product['name']) ?></h3>
+                        <p><?= htmlspecialchars($product['description']) ?></p>
+                        <p class="price"><?= (int)$product['price'] ?>&#8381;</p>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
         </table>
     </main>
 
