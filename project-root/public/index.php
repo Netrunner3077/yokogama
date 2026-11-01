@@ -11,6 +11,7 @@ require_once __DIR__ . '/../src/autoload.php';
 
 // Инициализируем роутер
 use App\Core\Router;
+use App\Controllers\CatalogController;
 
 $router = new Router();
 
@@ -23,6 +24,7 @@ $router->add('/pricelist', 'PageController@pricelist');
 $router->add('/order', 'PageController@order');
 $router->add('/takeaway', 'PageController@takeaway');
 $router->add('/chat', 'PageController@chat');
+$router->add('/catalog', 'CatalogController@index');
 $router->add('/process-order', 'PageController@processOrder');
 $router->add('/process-takeaway', 'PageController@processTakeaway');
 

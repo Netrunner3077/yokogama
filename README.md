@@ -1,119 +1,124 @@
 # Yokogama Sushi Bar
 
-Веб-приложение для сети суши-баров «Йокогама», предоставляющее удобный интерфейс для просмотра меню, бронирования столиков и заказа еды на вынос.
+Веб-приложение для сети суши-баров «Йокогама», предоставляющее удобный интерфейс для просмотра меню, бронирования столиков и заказа еды на вынос. Проект переведён с чистой статики на архитектуру MVC с использованием PHP, Docker и MySQL.
 
 ## Зачем это нужно?
 
-Проект решает задачу цифровизации ресторанного бизнеса: предоставляет клиентам удобный способ ознакомиться с ассортиментом, узнать цены и оформить заказ без звонков. В будущем проект будет масштабирован до полноценного интернет-магазина с корзиной, базой данных и каталогом товаров.
+Проект решает задачу цифровизации ресторанного бизнеса: предоставляет клиентам удобный способ ознакомиться с ассортиментом, узнать цены и оформить заказ. Архитектура MVC подготовлена для дальнейшего масштабирования (например, добавления корзины покупок и личного кабинета).
 
 ## Технологии
 
 Проект построен на современных стандартах веб-разработки:
 
 - **HTML5** — семантическая разметка (`<header>`, `<nav>`, `<main>`, `<footer>`, `<section>`), современные типы полей ввода (`type="time"`, `type="email"`), встроенная валидация форм через атрибут `required`, сложные таблицы с объединением ячеек (`colspan`, `rowspan`).
-- **CSS3** — внешние таблицы стилей с разделением на слои, блочная модель, Flexbox, градиенты, тени, скруглённые углы, адаптивные раскладки.
-- **JavaScript (ES6+)** — фиксированная навигация, плавная прокрутка, анимация сакуры, интерактивный чат-бот.
+- **CSS3** — внешние таблицы стилей с разделением на слои, блочная модель, Flexbox, CSS Grid, градиенты, тени, скруглённые углы, адаптивные раскладки (медиа-запросы).
+- **JavaScript (ES6+)** — фиксированная навигация, плавная прокрутка, анимация сакуры, интерактивный чат-бот (ООП).
+- **PHP (8.3)** — собственная MVC-архитектура, кастомный роутер, автозагрузка классов (PSR-4), сессии.
+- **MySQL (8.0)** — реляционная база данных, работа через PDO (Singleton).
+- **Docker** — контейнеризация (Nginx + PHP-FPM + MySQL), управление через `docker-compose`.
 
 ## Структура проекта
 
-Корневая папка проекта — `site`, внутри неё файлы разложены по назначению:
+Корневая папка проекта — `yokohama`, внутри неё файлы разложены по назначению:
 
 ```text
-project-root/
-├── img/
-│   ├──icons/
-│   │   ├── chat-bubble.svg
-│   │   ├── clock.svg
-│   │   ├── confetti.svg
-│   │   ├── envelope.svg
-│   │   ├── facebook.svg
-│   │   ├── instagram.svg
-│   │   ├── japanese-dolls.svg
-│   │   ├── japan-flag.svg
-│   │   ├── lantern.svg
-│   │   ├── map-pin.svg, phone.svg
-│   │   ├── robot.svg
-│   │   ├── rocket.svg
-│   │   ├── rocketchat.svg
-│   │   ├── rolls.svg
-│   │   ├── sakura.svg
-│   │   ├── sushi.svg
-│   │   ├── telegram.svg
-│   │   ├── torii-gate.svg
-│   │   └── vk.svg
-│   │
-│   ├── sushi.jpg
-│   ├── drink.jpg
-│   ├── sushi_chukka.jpg
-│   ├── sushi_maguro.jpg
-│   ├── sushi_tobiko.jpg
-│   ├── sashimi_unagi.jpg
-│   ├── sashimi_hamachi.jpg
-│   ├── roll_kunsei_batakon.jpg
-│   ├── roll_arigato.jpg
-│   ├── roll_mexican.jpg
-│   └── order_button.jpg
-│
-├── css/
-│   ├── style.css
-│   ├── variables.css
-│   ├── reset.css
-│   ├── animations.css
-│   ├── navigation.css
-│   ├── header.css
-│   ├── footer.css
-│   ├── buttons.css
-│   ├── forms.css
-│   ├── tables.css
-│   ├── grid.css
-│   ├── sections.css
-│   ├── utilities.css
-│   ├── chat.css
-│   ├── mobile.css
-│   └── tablet.css
-│
-├── js/
-│   ├── main.js
-│   └── chat.js
-│
-├── fonts/
-│   ├── CaviarDreams.ttf
-│   ├── Caviar_Dreams_Bold.ttf
-│   ├── CaviarDreams_Italic.ttf
-│   └── CaviarDreams_BoldItalic.ttf
-│
-├── html/
-│   ├── index.html
-│   ├── sushi.html
-│   ├── sashimi.html
-│   ├── rolls.html
-│   ├── pricelist.html
-│   ├── order.html
-│   ├── takeaway.html
-│   └── chat.html
-│
-└── src/    # Под PHP
+📁 yokohama
+├── 📁 docker
+│   ├── 📁 db
+│   │   ├── init.sql          # DDL-скрипт (создание таблиц)
+│   │   └── seed.sql          # SEED-скрипт (наполнение данными)
+│   ├── 📁 nginx
+│   │   └── default.conf      # Конфигурация веб-сервера
+│   └── 📁 php
+│       └── Dockerfile        # Сборка PHP-FPM с PDO
+├── 📁 project-root
+│   ├── 📁 public             # Публичная директория (DocumentRoot)
+│   │   ├── 📁 css
+│   │   │   ├── animations.css
+│   │   │   ├── buttons.css
+│   │   │   ├── chat.css
+│   │   │   ├── footer.css
+│   │   │   ├── forms.css
+│   │   │   ├── grid.css
+│   │   │   ├── header.css
+│   │   │   ├── mobile.css
+│   │   │   ├── navigation.css
+│   │   │   ├── reset.css
+│   │   │   ├── sections.css
+│   │   │   ├── style.css     # Главный файл со всеми @import
+│   │   │   ├── tables.css
+│   │   │   ├── tablet.css
+│   │   │   ├── utilities.css
+│   │   │   └── variables.css
+│   │   ├── 📁 fonts
+│   │   │   ├── CaviarDreams.ttf
+│   │   │   ├── CaviarDreams_BoldItalic.ttf
+│   │   │   ├── CaviarDreams_Italic.ttf
+│   │   │   └── Caviar_Dreams_Bold.ttf
+│   │   ├── 📁 img
+│   │   │   ├── 📁 icons      # SVG-иконки
+│   │   │   └── ... (все .jpg изображения)
+│   │   ├── 📁 js
+│   │   │   ├── chat.js       # Логика чат-бота
+│   │   │   └── main.js       # Основные скрипты
+│   │   └── index.php         # Точка входа (Front Controller)
+│   └── 📁 src                # Исходный код приложения (PSR-4)
+│       ├── 📁 Controllers
+│       │   ├── CatalogController.php
+│       │   └── PageController.php
+│       ├── 📁 Core
+│       │   ├── Controller.php # Базовый контроллер
+│       │   ├── Database.php   # PDO-подключение (Singleton)
+│       │   └── Router.php     # Кастомный роутер
+│       ├── 📁 Models
+│       │   ├── Booking.php
+│       │   ├── Order.php
+│       │   └── Product.php
+│       ├── 📁 Views
+│       │   ├── 📁 layouts
+│       │   │   ├── footer.php
+│       │   │   └── header.php
+│       │   ├── catalog.php
+│       │   ├── chat.php
+│       │   ├── home.php
+│       │   ├── order.php
+│       │   ├── pricelist.php
+│       │   ├── rolls.php
+│       │   ├── sashimi.php
+│       │   ├── sushi.php
+│       │   └── takeaway.php
+│       └── autoload.php       # Автозагрузчик классов
+├── .dockerignore
+├── .env.example
+├── .gitignore
+├── CHANGELOG.md
+├── docker-compose.yml
+├── Makefile
+└── README.md
 ```
 
-Стили организованы по методологии разделения содержания и оформления: базовые переменные и сброс — в `styles/base/`, переиспользуемые компоненты — в `styles/components/`, раскладки — в `styles/layouts/`, адаптивные правила — в `styles/responsive/`.
+## Установка и запуск (через Docker)
 
-## Установка и запуск
-
-На данный момент проект представляет собой статический сайт. Для локального просмотра:
+Для запуска проекта вам понадобятся **Docker** и **Docker Compose**.
 
 1. Клонируйте репозиторий:
    ```bash
    git clone https://github.com/Netrunner3077/yokogama.git
+   cd yokogama
    ```
-2. Перейдите в папку с HTML:
+2. Создайте файл .env в корне проекта на основе примера и укажите свои пароли для БД:
+   ```env
+   MYSQL_ROOT_PASSWORD=root
+   MYSQL_DATABASE=yokohama_db
+   MYSQL_USER=yokohama_user
+   MYSQL_PASSWORD=yokohama_pass
+   ```
+3. Запустите контейнеры:
    ```bash
-   cd project-root/html
+   docker-compose up -d --build
    ```
-3. Откройте `index.html` в браузере или запустите локальный сервер (например, Live Server в VS Code — в режиме разработки проект открывается на порту 5500).
-
-Альтернативный вариант — полноценный веб-сервер: разместите файлы проекта в корневой папке `htdocs` веб-сервера Apache. Главная страница должна называться `index.html` — именно этот файл сервер загружает по умолчанию при обращении к корневой директории, что даёт доступ к сайту по короткому запоминающемуся адресу.
-
-В будущем проект будет запускаться через Docker (шаги будут добавлены в README).
+   (Или используйте make up, если у вас установлен Make).
+4. Проект будет доступен по адресу: http://localhost:8080
 
 ## Ключевые особенности
 
@@ -131,12 +136,12 @@ project-root/
 
 ## Как пользоваться
 
-- **Главная страница** — приветствие и акции.
-- **Каталог** — разделы «Сашими», «Суши», «Роллы» с карточками товаров.
+- **Главная страница** — приветствие, акции и кнопка быстрого бронирования.
+- **Каталог** — единая страница со всеми блюдами и фильтрацией по категориям (Сашими, Суши, Роллы).
 - **Прайс-лист** — сводная таблица всех блюд с ценами.
-- **Бронирование** — форма заказа столика (пока работает через mailto).
-- **Доставка** — форма заказа еды на вынос.
-- **Чат-бот** — интерактивный помощник для ответов на частые вопросы.
+- **Бронирование** — форма заказа столика (данные сохраняются в БД).
+- **Доставка** — форма заказа еды на вынос (данные сохраняются в БД).
+- **Чат-бот** — интерактивный помощник для ответов на частые вопросы (на чистом JS).
 
 ## Как внести вклад
 

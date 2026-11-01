@@ -22,6 +22,7 @@
             <a href="/sashimi">Сашими</a>
             <a href="/sushi">Суши</a>
             <a href="/rolls">Роллы</a>
+            <a href="/catalog">Каталог</a>
             <a href="/pricelist">Прайс-лист</a>
             <a href="/order">Заказ столика</a>
             <a href="/takeaway">Еда на вынос</a>
@@ -38,6 +39,7 @@
                 <a href="/sushi" class="nav-link">Суши</a>
                 <a href="/rolls" class="nav-link">Роллы</a>
                 <a href="/pricelist" class="nav-link">Прайс-лист</a>
+                <a href="/catalog" class="nav-link">Каталог</a>
                 <a href="/order" class="nav-link">Заказ столика</a>
                 <a href="/takeaway" class="nav-link">Еда на вынос</a>
             </div>

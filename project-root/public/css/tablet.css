@@ -1,7 +1,7 @@
 /* Планшеты (481px - 768px) */
 @media (max-width: 768px) {
     body {
-        padding-top: 120px;
+        padding-top: 90px;
     }
     
     .container {
@@ -9,15 +9,19 @@
     }
     
     nav {
-        flex-direction: column;
+        padding: 0 var(--spacing-sm);
         align-items: center;
     }
     
     nav div, nav a {
         font-size: 14pt;
-        padding: 10pt;
-        width: 100%;
-        text-align: center;
+        padding: 10pt 0;
+        width: auto;
+        text-align: left;
+    }
+
+    nav div.nav-dropdown {
+        width: auto;
     }
     
     header h1:last-of-type {
