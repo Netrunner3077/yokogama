@@ -20,3 +20,23 @@ services:
     volumes:
       - ./project-root:/var/www/html
     working_dir: /var/www/html/public # Рабочая директория внутри контейнера
+  
+  # Сервис базы данных
+  db:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - "3306:3306" # Порт для подключения с твоего компьютера (например, через DBeaver)
+    volumes:
+      - ./docker/db/init.sql:/docker-entrypoint-initdb.d/init.sql # Скрипт, который выполнится при первом запуске БД
+      - db_data:/var/lib/mysql # Сохраняем данные БД, чтобы они не пропадали при перезапуске
+
+# Объявляем volume для хранения данных БД
+volumes:
+  db_data:
