@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Чат-бот поддержки - Йокогама</title>
-    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
@@ -22,7 +22,7 @@
         <div class="chat-messages" id="chatMessages">
             <div class="message bot-message">
                 <div class="message-content">
-                    <img src="../img/icons/japan-flag.svg" class="icon" alt="Акция">
+                    <img src="/img/icons/japan-flag.svg" class="icon" alt="Акция">
                     <strong>いらっしゃいませ!</strong><br>
                     Добро пожаловать в суши-бар "Йокогама"! Чем я могу вам помочь?
                 </div>
@@ -46,7 +46,7 @@
     <div class="modal" id="messengerModal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <img src="../img/icons/japanese-dolls.svg" class="icon" alt="Соцсети">
+            <img src="/img/icons/japanese-dolls.svg" class="icon" alt="Соцсети">
             <h3>Соединение со специалистом</h3>
             <p>Выберите удобный способ связи:</p>
             <div class="messenger-buttons">
@@ -66,7 +66,7 @@
         </div>
     </div>
 
-    <script src="../js/chat.js"></script>
+    <script src="/js/chat.js"></script>
 </body>
 
 </html>

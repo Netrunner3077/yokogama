@@ -1,21 +1,21 @@
 /* Шрифты */
 @font-face {
     font-family: "Caviar Dreams";
-    src: url(../fonts/CaviarDreams.ttf);
+    src: url(/fonts/CaviarDreams.ttf);
 }
 @font-face {
     font-family: "Caviar Dreams";
-    src: url(../fonts/Caviar_Dreams_Bold.ttf);
+    src: url(/fonts/Caviar_Dreams_Bold.ttf);
     font-weight: bold;
 }
 @font-face {
     font-family: "Caviar Dreams";
-    src: url(../fonts/CaviarDreams_Italic.ttf);
+    src: url(/fonts/CaviarDreams_Italic.ttf);
     font-style: italic;
 }
 @font-face {
     font-family: "Caviar Dreams";
-    src: url(../fonts/CaviarDreams_BoldItalic.ttf);
+    src: url(/fonts/CaviarDreams_BoldItalic.ttf);
     font-weight: bold;
     font-style: italic;
 }

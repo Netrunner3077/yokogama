@@ -129,5 +129,5 @@ function initializeChatBot() {
 
 // Функция для открытия чата
 function openChat() {
-    window.open('../html/chat.html', 'chat', 'width=400,height=600,menubar=no,toolbar=no,location=no');
+    window.open('/chat', 'chat', 'width=400,height=600,menubar=no,toolbar=no,location=no');
 }

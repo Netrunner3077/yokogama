@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  # Контейнер с Nginx (веб-сервер)
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8080:80" # Порт 8080 на твоем компьютере будет смотреть на 80 порт внутри контейнера
+    volumes:
+      - ./project-root:/var/www/html # Монтируем папку с проектом в контейнер
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf # Монтируем конфиг Nginx
+    depends_on:
+      - php # Nginx запускается после PHP
+
+  # Контейнер с PHP
+  php:
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    volumes:
+      - ./project-root:/var/www/html
+    working_dir: /var/www/html/public # Рабочая директория внутри контейнера
+    depends_on:
+      db:
+        condition: service_healthy # Ожидание полной готовности до запуска
+    environment: # Адрес хоста (имя сервиса db) и пароли
+      DB_HOST: db
+      DB_NAME: ${MYSQL_DATABASE}
+      DB_USER: ${MYSQL_USER}
+      DB_PASS: ${MYSQL_PASSWORD}
+  
+  # Сервис базы данных
+  db:
+    image: mysql:8.0
+    command: 
+      --default-authentication-plugin=mysql_native_password
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_unicode_ci
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - "3306:3306" # Порт для подключения с твоего компьютера (например, через DBeaver)
+    volumes:
+      - ./docker/db/init.sql:/docker-entrypoint-initdb.d/init.sql # Скрипт, который выполнится при первом запуске БД
+      - db_data:/var/lib/mysql # Сохраняем данные БД, чтобы они не пропадали при перезапуске
+      - ./docker/db/seed.sql:/docker-entrypoint-initdb.d/seed.sql # Маппинг для сида
+    # Настройка Healthcheck (проверка состояния) для базы данных: PHP будет ждать, пока MySQL не "прогреется" и не начнет отвечать
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+# Объявляем volume для хранения данных БД
+volumes:
+  db_data:
