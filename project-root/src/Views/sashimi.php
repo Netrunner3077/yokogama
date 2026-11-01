@@ -1,183 +1,28 @@
-﻿<!doctype html>
-<html>
+﻿<?php
+$title = 'Сашими';
+$breadcrumbs = [
+    'Главная' => '/#hd',
+    'Сашими' => null // null означает, что ссылки нет (текущая страница)
+];
+require __DIR__ . '/layouts/header.php';
+?>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Сашими :: Йокогама: суши-бар</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/css/style.css" rel="stylesheet" type="text/css">
-    <meta name="description" content="Суши-бар Йокогама. Сашими, суши, роллы, напитки">
-    <meta name="keywords" content="суши-бар, Йогагама, сашими, унаги, хамачи">
-    <meta name="author" content="Читатель">
-    <meta name="generator" content="Блокнот">
-</head>
+<main class="container">
+    <h2>Сашими</h2>
+    <div class="japanese-title">刺身</div>
 
-<body>
-    <header>
-        <!-- Фиксированная навигация -->
-        <nav id="mainNav">
-            <!-- Бренд/логотип -->
-            <a href="/#hd" class="nav-brand"><img src="/img/icons/torii-gate.svg" class="nav-icon"
-                    alt="Логотип">Йокогама</a>
+    <table class="catalog">
+        <?php foreach ($products as $product): ?>
+            <tr>
+                <td><img src="<?= htmlspecialchars($product['image_path']) ?>" alt="<?= htmlspecialchars($product['name']) ?>"></td>
+                <td>
+                    <h3><?= htmlspecialchars($product['name']) ?></h3>
+                    <p><?= htmlspecialchars($product['description']) ?></p>
+                    <p class="price"><?= (int)$product['price'] ?>&#8381;</p>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+</main>
 
-            <!-- Полная навигация для десктопов -->
-            <div class="nav-full">
-                <a href="/#hd">Главная</a>
-                <a href="#">Сашими</a>
-                <a href="/sushi">Суши</a>
-                <a href="/rolls">Роллы</a>
-                <a href="/pricelist">Прайс-лист</a>
-                <a href="/order">Заказ столика</a>
-                <a href="/takeaway">Еда на вынос</a>
-            </div>
-
-            <!-- Выпадающее меню для мобильных -->
-            <div class="nav-dropdown">
-                <button class="nav-toggle" id="navToggle">
-                    <span class="nav-icon">&equiv;</span>
-                    <span class="nav-close">&#65794;</span>
-                </button>
-                <div class="nav-menu" id="navMenu">
-                    <a href="/#hd" class="nav-link">Главная</a>
-                    <a href="#" class="nav-link">Сашими</a>
-                    <a href="/sushi" class="nav-link">Суши</a>
-                    <a href="/rolls" class="nav-link">Роллы</a>
-                    <a href="/pricelist" class="nav-link">Прайс-лист</a>
-                    <a href="/order" class="nav-link">Заказ столика</a>
-                    <a href="/takeaway" class="nav-link">Еда на вынос</a>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Оверлей для затемнения фона -->
-        <div class="nav-overlay" id="navOverlay"></div>
-
-        <section class="container">
-            <div class="pos1"><img src="/img/sushi.jpg" alt="Суши-бар Йокогама"></div>
-            <div class="pos2">
-                <h1>Йокогама</h1>
-            </div>
-            <div class="pos3">
-                <h1>Суши-бар</h1>
-            </div>
-        </section>
-    </header>
-
-    <div class="breadcrumbs">
-        <nav>
-            <a href="/#hd">Главная</a>
-            <div>Сашими</div>
-        </nav>
-    </div>
-
-    <main class="container">
-        <h2>Сашими</h2>
-        <div class="japanese-title">刺身</div>
-
-        <table class="catalog">
-            <?php foreach ($products as $product): ?>
-                <tr>
-                    <td><img src="<?= htmlspecialchars($product['image_path']) ?>" alt="<?= htmlspecialchars($product['name']) ?>"></td>
-                    <td>
-                        <h3><?= htmlspecialchars($product['name']) ?></h3>
-                        <p><?= htmlspecialchars($product['description']) ?></p>
-                        <p class="price"><?= (int)$product['price'] ?>&#8381;</p>
-                    </td>
-                </tr>
-            <?php endforeach; ?>
-        </table>
-    </main>
-
-    <!-- Универсальный футер -->
-    <footer id="ft">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3><img src="/img/icons/torii-gate.svg" class="icon" alt="Логотип"> Контакты</h3>
-                <div class="footer-contact">
-                    <div class="contact-item">
-                        <div class="contact-icon"><img src="/img/icons/map-pin.svg" class="icon" alt="Адрес"></div>
-                        <div>
-                            <strong>Адрес</strong><br>
-                            ул. Зелёной Рощи, 17<br>
-                            Москва, Россия
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon"><img src="/img/icons/phone.svg" class="icon" alt="Телефон"></div>
-                        <div>
-                            <strong>Телефон</strong><br>
-                            +7 (495) 123-45-67
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon"><img src="/img/icons/envelope.svg" class="icon" alt="Email"></div>
-                        <div>
-                            <strong>Email</strong><br>
-                            info@yokogama.ru
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-section">
-                <h3><img src="/img/icons/clock.svg" class="icon" alt="Время"> Часы работы</h3>
-                <div class="business-hours">
-                    <div class="hours-row">
-                        <span>Понедельник - Четверг</span>
-                        <span>12:00 - 22:00</span>
-                    </div>
-                    <div class="hours-row">
-                        <span>Пятница - Суббота</span>
-                        <span>12:00 - 23:00</span>
-                    </div>
-                    <div class="hours-row">
-                        <span>Воскресенье</span>
-                        <span>12:00 - 21:00</span>
-                    </div>
-                </div>
-
-                <h3 style="margin-top: 30px;"><img src="/img/icons/japanese-dolls.svg" class="icon" alt="Соцсети"> Мы в
-                    соцсетях</h3>
-                <div class="social-links">
-                    <a href="#" class="social-link" title="Instagram"><img src="/img/icons/instagram.svg"
-                            class="social-icon" alt="Instagram"></a>
-                    <a href="#" class="social-link" title="Facebook"><img src="/img/icons/facebook.svg"
-                            class="social-icon" alt="Facebook"></a>
-                    <a href="#" class="social-link" title="Telegram"><img src="/img/icons/telegram.svg"
-                            class="social-icon" alt="Telegram"></a>
-                    <a href="#" class="social-link" title="VK"><img src="/img/icons/vk.svg" class="social-icon"
-                            alt="VKontakte"></a>
-                </div>
-            </div>
-
-            <div class="footer-section">
-                <h3><img src="/img/icons/sushi.svg" class="icon" alt="Суши"> О нас</h3>
-                <p>Суши-бар "Йокогама" - это место, где традиции встречаются с инновациями. Наши шеф-повара из Японии
-                    готовят блюда по аутентичным рецептам.</p>
-
-                <div class="booking-masterpiece" style="margin: 30px 0;">
-                    <a href="/order" class="booking-button" style="font-size: 16pt;">
-                        Забронировать стол
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2024 Суши-бар "Йокогама". Все права защищены.</p>
-            <p>Сайт создан читателями книги &laquo;HTML и CSS&raquo;</p>
-            <div class="japanese-title" style="writing-mode: horizontal-tb; margin-top: 15px; font-size: 14pt;">
-                お待ちしております
-            </div>
-        </div>
-    </footer>
-
-    <!-- Кнопка чата -->
-    <button class="chat-toggle" id="chatToggle" onclick="openChat()" title="Чат поддержки">
-        <i class="fas fa-comments"></i>
-    </button>
-
-    <script src="/js/main.js"></script>
-</body>
-
-</html>
+<?php require __DIR__ . '/layouts/footer.php'; ?>
