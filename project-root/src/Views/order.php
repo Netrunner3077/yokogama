@@ -16,7 +16,7 @@ require __DIR__ . '/layouts/header.php';
             complimentary зеленый чай для всей компании!</p>
     </div>
 
-    <form action="mailto:order@yokogama.ru" method="post" enctype="text/plain" class="fade-in">
+    <form action="/process-order" method="post" class="fade-in">
         <p>
             <label for="name">Как к Вам обращаться?</label>
             <input type="text" name="name" id="name" required value="Ivan Ivanovich" placeholder="Введите ваше имя">

@@ -23,6 +23,8 @@ $router->add('/pricelist', 'PageController@pricelist');
 $router->add('/order', 'PageController@order');
 $router->add('/takeaway', 'PageController@takeaway');
 $router->add('/chat', 'PageController@chat');
+$router->add('/process-order', 'PageController@processOrder');
+$router->add('/process-takeaway', 'PageController@processTakeaway');
 
 // Запускаем обработку текущего запроса
 $router->dispatch($_SERVER['REQUEST_URI']);

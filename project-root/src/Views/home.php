@@ -20,6 +20,14 @@ require __DIR__ . '/layouts/header.php';
     </section>
 </header>
 
+<?php if (isset($_GET['success'])): ?>
+    <div class="container" style="margin-top: 20px;">
+        <div style="background: #d4edda; color: #155724; padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #c3e6cb;">
+            <?= $_GET['success'] === 'booking' ? 'Столик успешно забронирован! Мы ждем вас.' : 'Заказ успешно оформлен! Мы свяжемся с вами.' ?>
+        </div>
+    </div>
+<?php endif; ?>
+
 <main class="container">
     <article class="main-content fade-in">
         <h2 class="text-center">Добро пожаловать в суши-бар Йокогама!</h2>
@@ -67,4 +75,4 @@ require __DIR__ . '/layouts/header.php';
     </article>
 </main>
 
-    <?php require __DIR__ . '/layouts/footer.php'; ?>
+<?php require __DIR__ . '/layouts/footer.php'; ?>

@@ -18,11 +18,11 @@ require __DIR__ . '/layouts/header.php';
             соблюдением температурного режима.</p>
     </div>
 
-    <form action="mailto:order@yokogama.ru" method="post" enctype="text/plain" class="fade-in">
+    <form action="/process-takeaway" method="post" class="fade-in">
         <p>
             <label for="dishes">Что желаете заказать? (Для выбора нескольких блюд используйте
                 Ctrl+Click)</label><br>
-            <select name="dishes" id="dishes" size="8" multiple>
+            <select name="dishes[]" id="dishes" size="8" multiple>
                 <img src="/img/icons/japan-flag.svg" class="icon" alt="Акция">
                 <optgroup label="Сашими">
                     <option value="unagi">Унаги - 340 руб.</option>
@@ -78,6 +78,7 @@ require __DIR__ . '/layouts/header.php';
             <textarea name="notes" id="notes" rows="3"
                 placeholder="Аллергии, особые пожелания по приготовлению..."></textarea>
         </p>
+        <p><input type="hidden" name="name" value="Клиент доставки"></p>
         <p><input type="submit" value="Заказать доставку"></p>
     </form>
 
